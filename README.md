@@ -43,6 +43,3 @@ git clone https://github.com/your-username/your-repository.git
 2. run `npm install` to install dependencies.
 3. Start the backend server as `node index.js`
 
-# Start the frontend (in the frontend directory)
- npm start                                                                                                      # Start the backend (in the backend directory)
-npm start

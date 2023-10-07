@@ -28,18 +28,18 @@ This feature enables users to view the list of products in the inventory.
 ## Getting Started
 
 1. Clone this repository 
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/SHRINIDHIKV713/grocery-management.git
 
 2. or download zip file
 
 ## Frontend 
-1. open the terminal/commond prompt and navigate as `cd client`
+1. Navigate to the client directory as `cd client`
 2. run `npm install` to install dependencies.
 3. Start the frontend server as `npm start`
 
 
 ## Backend
-1. open the terminal/commond prompt and navigate as `cd server`
+1. Navigate to the server directory as `cd server`
 2. run `npm install` to install dependencies.
 3. Start the backend server as `node index.js`
 

@@ -12,7 +12,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { Select, InputLabel, FormControl } from "@mui/material";
+import { Select, FormControl } from "@mui/material";
 
 function App() {
   const [product, setProduct] = useState({
@@ -51,10 +51,7 @@ function App() {
       [name]: false,
     }));
   };
-  
-    
-  
-  
+
   const addItem = () => {
     const { name, category, quantity, price, expiryDate, manDate } = product;
 
@@ -131,13 +128,7 @@ function App() {
             error={formErrors.name}
           />
           <br />
-          <FormControl fullWidth style={{marginTop:"7px"}}>
-            <InputLabel
-              htmlFor="grouped-native-select"
-              style={{ marginTop: "-8px" }}
-            >
-              Category
-            </InputLabel>
+          <FormControl fullWidth style={{ marginTop: "7px" }}>
             <Select
               native
               id="grouped-native-select"
@@ -148,14 +139,12 @@ function App() {
               error={formErrors.category}
               size="small"
             >
-              <option aria-label="" value="" />
-              <optgroup label="Categories">
-                <option value="fruits">Fruits</option>
-                <option value="vegetables">Vegetables</option>
-                <option value="dairy">Dairy</option>
-                <option value="bakery">Bakery</option>
-                <option value="drygoods">Dry Goods</option>
-              </optgroup>
+              <option label="Select category" />
+              <option value="fruits">Fruits</option>
+              <option value="vegetables">Vegetables</option>
+              <option value="dairy">Dairy</option>
+              <option value="bakery">Bakery</option>
+              <option value="drygoods">Dry Goods</option>
             </Select>
           </FormControl>
 
@@ -227,7 +216,12 @@ function App() {
       </Paper>
       <TableContainer
         component={Paper}
-        style={{ marginTop: 20, width: "90%", padding: "20px",marginBottom:"10px" }}
+        style={{
+          marginTop: 20,
+          width: "90%",
+          padding: "20px",
+          marginBottom: "10px",
+        }}
       >
         <Table>
           <TableHead>

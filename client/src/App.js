@@ -12,7 +12,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
+import { Select, InputLabel, FormControl } from "@mui/material";
 
 function App() {
   const [product, setProduct] = useState({
@@ -51,7 +51,10 @@ function App() {
       [name]: false,
     }));
   };
-
+  
+    
+  
+  
   const addItem = () => {
     const { name, category, quantity, price, expiryDate, manDate } = product;
 
@@ -128,23 +131,34 @@ function App() {
             error={formErrors.name}
           />
           <br />
-
-          <FormControl fullWidth margin="normal">
-            <InputLabel>Category</InputLabel>
+          <FormControl fullWidth style={{marginTop:"7px"}}>
+            <InputLabel
+              htmlFor="grouped-native-select"
+              style={{ marginTop: "-8px" }}
+            >
+              Category
+            </InputLabel>
             <Select
+              native
+              id="grouped-native-select"
+              label="Grouping"
               name="category"
               value={product.category}
               onChange={handleChange}
               error={formErrors.category}
               size="small"
             >
-              <MenuItem value="fruits">Fruits</MenuItem>
-              <MenuItem value="vegetables">Vegetables</MenuItem>
-              <MenuItem value="dairy">Dairy</MenuItem>
-              <MenuItem value="bakery">Bakery</MenuItem>
-              <MenuItem value="dry goods">Dry Goods</MenuItem>
+              <option aria-label="" value="" />
+              <optgroup label="Categories">
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dairy">Dairy</option>
+                <option value="bakery">Bakery</option>
+                <option value="drygoods">Dry Goods</option>
+              </optgroup>
             </Select>
           </FormControl>
+
           <br />
           <TextField
             label="Quantity (kg)"
@@ -173,19 +187,6 @@ function App() {
           />
           <br />
           <TextField
-            helperText="Expiry date"
-            type="date"
-            name="expiryDate"
-            value={product.expiryDate}
-            onChange={handleChange}
-            fullWidth
-            margin="normal"
-            size="small"
-            required
-            error={formErrors.expiryDate}
-          />
-          <br />
-          <TextField
             helperText="Manufacturing Date"
             type="date"
             name="manDate"
@@ -196,6 +197,22 @@ function App() {
             size="small"
             required
             error={formErrors.manDate}
+          />
+          <br />
+          <TextField
+            helperText="Expiry date"
+            type="date"
+            name="expiryDate"
+            value={product.expiryDate}
+            onChange={handleChange}
+            fullWidth
+            margin="normal"
+            size="small"
+            required
+            error={formErrors.expiryDate}
+            inputProps={{
+              min: product.manDate, // Set the min attribute to the manufacturing date
+            }}
           />
           <br />
           <Button
@@ -210,7 +227,7 @@ function App() {
       </Paper>
       <TableContainer
         component={Paper}
-        style={{ marginTop: 20, width: "90%", padding: "20px" }}
+        style={{ marginTop: 20, width: "90%", padding: "20px",marginBottom:"10px" }}
       >
         <Table>
           <TableHead>
@@ -219,8 +236,8 @@ function App() {
               <TableCell>Category</TableCell>
               <TableCell>Quantity</TableCell>
               <TableCell>Price</TableCell>
-              <TableCell>Expiry Date</TableCell>
               <TableCell>Manufacturing Date</TableCell>
+              <TableCell>Expiry Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -230,8 +247,8 @@ function App() {
                 <TableCell>{item.category}</TableCell>
                 <TableCell>{item.quantity}kg</TableCell>
                 <TableCell>{item.price}</TableCell>
-                <TableCell>{item.expiryDate}</TableCell>
                 <TableCell>{item.manDate}</TableCell>
+                <TableCell>{item.expiryDate}</TableCell>
               </TableRow>
             ))}
           </TableBody>

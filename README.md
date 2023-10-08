@@ -1,5 +1,5 @@
 
-# Grocery Inventory Management Application
+# Grocery Inventory Management System
 
 This is a web application for managing grocery inventory built using React for the frontend
 and Node.js for the backend.

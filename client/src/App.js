@@ -129,25 +129,25 @@ function App() {
             error={formErrors.name}
           />
           <br />
-          <FormControl fullWidth style={{ marginTop: "7px" }}>
-            <Select
-              native
-              id="grouped-native-select"
-              label="Grouping"
-              name="category"
-              value={product.category}
-              onChange={handleChange}
-              error={formErrors.category}
-              size="small"
-            >
-              <option label="Select category" />
-              <option value="fruits">Fruits</option>
-              <option value="vegetables">Vegetables</option>
-              <option value="dairy">Dairy</option>
-              <option value="bakery">Bakery</option>
-              <option value="drygoods">Dry Goods</option>
-            </Select>
-          </FormControl>
+          // <FormControl fullWidth style={{ marginTop: "7px" }}>
+          //   <Select
+          //     native
+          //     id="grouped-native-select"
+          //     label="Grouping"
+          //     name="category"
+          //     value={product.category}
+          //     onChange={handleChange}
+          //     error={formErrors.category}
+          //     size="small"
+          //   >
+          //     <option label="Select category" />
+          //     <option value="fruits">Fruits</option>
+          //     <option value="vegetables">Vegetables</option>
+          //     <option value="dairy">Dairy</option>
+          //     <option value="bakery">Bakery</option>
+          //     <option value="drygoods">Dry Goods</option>
+          //   </Select>
+          // </FormControl>
              
 <FormControl fullWidth style={{ marginTop: "7px" }}>
   <InputLabel id="demo-simple-select-label">Category</InputLabel>

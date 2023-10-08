@@ -13,7 +13,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { Select, FormControl } from "@mui/material";
+import { Select,InputLabel, FormControl } from "@mui/material";
 
 function App() {
   const [product, setProduct] = useState({
@@ -129,28 +129,9 @@ function App() {
             error={formErrors.name}
           />
           <br />
-          // <FormControl fullWidth style={{ marginTop: "7px" }}>
-          //   <Select
-          //     native
-          //     id="grouped-native-select"
-          //     label="Grouping"
-          //     name="category"
-          //     value={product.category}
-          //     onChange={handleChange}
-          //     error={formErrors.category}
-          //     size="small"
-          //   >
-          //     <option label="Select category" />
-          //     <option value="fruits">Fruits</option>
-          //     <option value="vegetables">Vegetables</option>
-          //     <option value="dairy">Dairy</option>
-          //     <option value="bakery">Bakery</option>
-          //     <option value="drygoods">Dry Goods</option>
-          //   </Select>
-          // </FormControl>
              
 <FormControl fullWidth style={{ marginTop: "7px" }}>
-  <InputLabel id="demo-simple-select-label">Category</InputLabel>
+  <InputLabel id="demo-simple-select-label" style={{marginTop:"-7px"}}>Category</InputLabel>
   <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
@@ -159,7 +140,7 @@ function App() {
     value={product.category}
     onChange={handleChange}
     error={formErrors.category}
-    
+    size="small"
     
   >
     <MenuItem value={"fruits"}>Fruits</MenuItem>

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Paper,
   TextField,
+  MenuItem,
   Button,
   Table,
   TableBody,
@@ -147,7 +148,28 @@ function App() {
               <option value="drygoods">Dry Goods</option>
             </Select>
           </FormControl>
-
+             
+<FormControl fullWidth style={{ marginTop: "7px" }}>
+  <InputLabel id="demo-simple-select-label">Category</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Grouping"
+    name="category"
+    value={product.category}
+    onChange={handleChange}
+    error={formErrors.category}
+    
+    
+  >
+    <MenuItem value={"fruits"}>Fruits</MenuItem>
+    <MenuItem value={"vegetables"}>Vegetables</MenuItem>
+    <MenuItem value={"dairy"}>Dairy</MenuItem>
+    <MenuItem value={"bakery"}>Bakery</MenuItem>
+    <MenuItem value={"drygoods"}>Dry Goods</MenuItem>
+   
+  </Select>
+</FormControl>
           <br />
           <TextField
             label="Quantity (kg)"
